@@ -16,9 +16,10 @@ function Header() {
     <div className='header-container'>
 
        <div className="left-header">
-        <p>meesho</p>
+        <div><p>meesho</p></div>
+        
         <div className="ip-section">
-          <SearchIcon/>
+          <SearchIcon />
            <input type="text" placeholder='Try Saree,Kurti or Search by Product Code'/>
       
         </div>

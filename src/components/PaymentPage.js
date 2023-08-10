@@ -80,7 +80,7 @@ function PaymentPage() {
        </div>
        <p className='cart-right-smalltext'>Clicking on Continue will not deduct any money</p>
 
-    <Link to={'/home'}> <button onClick={paymentBtn}
+    <Link to={'/'}> <button onClick={paymentBtn}
     className='continue-btn'
       >Continue</button></Link>
    </div>
