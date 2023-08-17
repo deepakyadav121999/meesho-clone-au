@@ -8,6 +8,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import StarPurple500SharpIcon from '@mui/icons-material/StarPurple500Sharp';
 import { setLength } from '../redux/actions/LengthAction'
+import { Link } from 'react-router-dom'
 
 
 function ProductDiscription() {
@@ -59,7 +60,7 @@ useEffect(()=>{
                     ><ShoppingCartOutlinedIcon className='dis-btn' />Add to Cart</button>
           
                   
-                    <button className='discription-btn2'><KeyboardDoubleArrowRightIcon className='dis-btn'/>Buy Now</button>
+          <Link to={'/womanEthinic'} ><button className='discription-btn2' ><KeyboardDoubleArrowRightIcon className='dis-btn'/>Buy Now</button></Link>
                     </div>
              </div>
              <div className="discription-container-right">

@@ -22,6 +22,7 @@ import Jwellery from './components/Jwellery';
 import Bags from './components/Bags';
 import Electronics from './components/Electronics';
 import Search from './components/Search';
+import DirectBuyNow from './components/DirectBuyNow';
 
 function App() {
  const user =useSelector((state)=>state.user.user);
@@ -58,6 +59,7 @@ function App() {
         <Route path='/bags' element={<Bags/>}/>
         <Route path='/electronics' element={< Electronics/>}/>
         <Route path='/search' element={<Search/>}/>
+        <Route path='/directbuy' element={<DirectBuyNow/>}/>
 
   
 

@@ -92,6 +92,8 @@ display: flex;
     font-size: 18px;
     border: none;
     border-radius: 5px;
+    height: 50px;
+    margin-left: 10px;
     
 }
 
@@ -142,6 +144,8 @@ display: flex;
     display: flex;
     gap: 10px;
 }
+
+
 @media screen and (max-width: 375px) {
     .discription-container{
         display: flex;
@@ -200,6 +204,16 @@ display: flex;
        padding: 10px;
        margin-left: 10px;
     }
+    .discription-btn2{
+      text-align: center;
+      cursor: pointer;
+      height: 50px;
+      width: 160px;
+     border-radius: 5px;
+     border: 0.1px solid  rgb(219, 47, 211);
+     padding: 10px;
+     margin-left: 10px;
+    } 
     
 }
 @media screen and (max-width: 375px) {
@@ -240,6 +254,11 @@ display: flex;
     .discription-btn-11 > button {
       width: 140px;
     }
+    .discription-btn2{
+      .discription-btn-11 > button {
+        width: 140px;
+      }
+    }
   }@media screen and (max-width: 375px) {
     .discription-container {
       display: flex;
@@ -278,6 +297,9 @@ display: flex;
     .discription-btn-11 > button {
       width: 140px;
     }
+    .discription-btn2{
+      width: 140px;
+    }
   }
   @media screen and (max-width: 768px) {
     .discription-container-left > img {
@@ -312,6 +334,9 @@ display: flex;
     .discription-btn-11 > button {
       width: 100%;
     }
+    .discription-btn2{
+      width: 100%;
+    }
   }
   
   /* Styles for larger screens */
@@ -335,7 +360,10 @@ display: flex;
       margin-top: 30px;
     }
   
-    .discription-btn-11 > button {
+    .discription-btn-11 > button{
+      width: 180px;
+    }
+    .discription-btn2{
       width: 180px;
     }
   }
