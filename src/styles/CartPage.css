@@ -132,10 +132,32 @@
    
 }
 
-@media screen and (max-width: 375px){
-    .cartpage-container{
-        display: flex;
-  flex-direction: column;
-        gap: 30px;
+@media screen and (max-width: 768px) {
+    .cartpage-container {
+      flex-direction: column;
+      align-items: center;
     }
-}
+  
+    .container-left,
+    .container-right {
+      width: 100%;
+    }
+  
+    .left-container-item {
+      flex-direction: column;
+    }
+  
+    .left-image-text-adjust > img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .left-container-edit-btn {
+      margin-top: 5px;
+    }
+  
+    .container-right {
+      border-left: none;
+      border-top: 0.1px solid rgb(204, 198, 198);
+    }
+  }

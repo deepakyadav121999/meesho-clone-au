@@ -57,18 +57,18 @@
     font-weight: 300;
    
 }
-@media screen and (max-width: 375px) {
-.footer-container{
-display: flex;
-flex-direction: column;
-margin-top: 150px;
-margin-bottom: 90px;
-}
-.foo5{
-max-width: 150px;
-text-align: center;
-text-justify: auto;
-padding: 5px;
-margin-right: 10px;
-}
-}
+@media screen and (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .boxifoo {
+      width: 100%;
+    }
+  
+    .icon {
+      font-size: 25px;
+    }
+  }

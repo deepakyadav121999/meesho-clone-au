@@ -15,6 +15,13 @@ import { ActionTypes } from './redux/constants/action-types';
 import {setuser} from './redux/actions/userAction'
 import { useSelector,useDispatch } from 'react-redux';
 import PaymentPage from './components/PaymentPage'
+import WomenEthnic from './components/WomenEthnic';
+import CatogoryNotFoun from './CatogoryNotFoun';
+import Men from './components/Men';
+import Jwellery from './components/Jwellery';
+import Bags from './components/Bags';
+import Electronics from './components/Electronics';
+import Search from './components/Search';
 
 function App() {
  const user =useSelector((state)=>state.user.user);
@@ -44,6 +51,14 @@ function App() {
         <Route path='/signup' element={<Signup/>}/>
         <Route path='/home' element={<Homepage/>}/>
         <Route path='/payment' element={<PaymentPage/>}/>
+        <Route path='/womanEthinic' element={<WomenEthnic/>}/>
+        <Route path='/itemunawailable' element={<CatogoryNotFoun/>}/>
+        <Route path='/men' element={<Men/>}/>
+        <Route path='/jwellery' element={<Jwellery/>}/>
+        <Route path='/bags' element={<Bags/>}/>
+        <Route path='/electronics' element={< Electronics/>}/>
+        <Route path='/search' element={<Search/>}/>
+
   
 
        </Routes>

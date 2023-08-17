@@ -1,38 +1,39 @@
 import React, { useEffect} from 'react'
-import './Homepage.css'
+import '../Homepage.css'
 import { useDispatch,useSelector } from 'react-redux'
-import { setProduct } from './redux/actions/productActions'
-import { ActionTypes } from './redux/constants/action-types'
+import { setProduct } from '../redux/actions/productActions'
+import { ActionTypes } from '../redux/constants/action-types'
 import { Link } from 'react-router-dom'
 import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
-import {setDiscription} from './redux/actions/discriptionAction'
+import {setDiscription} from '../redux/actions/discriptionAction'
 
-function Homepage() {
-     const dispatch1 = useDispatch(ActionTypes.SET_DISCRIPTION)
-   const product = useSelector((state)=>state.products.listproducts)
-   const dispatch = useDispatch(ActionTypes.SET_PRODUCTS)
-  const callapi =async()=>{
-    let url = await fetch("https://fakestoreapi.com/products")
-    let res = await url.json();
+function Men() {
+    const dispatch1 = useDispatch(ActionTypes.SET_DISCRIPTION)
+    const product = useSelector((state)=>state.products.listproducts)
+    const dispatch = useDispatch(ActionTypes.SET_PRODUCTS)
+   const callapi =async()=>{
+     let url = await fetch("https://fakestoreapi.com/products")
+     let res = await url.json();
+     
+     dispatch(setProduct(res))
+     
     
-    dispatch(setProduct(res))
-    
-   
+   }
+   console.log(product)
+   useEffect(()=>{
+   callapi()
+  // eslint-disable-next-line
+   },[])
+  const emtyStr =()=>{
+   dispatch1(setDiscription(''))
   }
-  console.log(product)
-  useEffect(()=>{
-  callapi()
- // eslint-disable-next-line
-  },[])
- const emtyStr =()=>{
-  dispatch1(setDiscription(''))
- }
+  let Men = product.filter((item)=>{
+    return item.title.includes("Mens")
+   })
   return (
-  
-  
     <div className='homepage-container'>
       
-    { product && product.map((item,index)=>{
+    { Men && Men.map((item,index)=>{
      return <Link to={`/product/${item.id}`} style={{textDecoration:'none', color:'black'}}  key={index} onClick={emtyStr}>
      <div className='homepage-list'>
        <img src={item.image}  alt="" />
@@ -55,8 +56,7 @@ function Homepage() {
     }) }
     
     </div>
-
   )
 }
 
-export default Homepage
+export default Men
