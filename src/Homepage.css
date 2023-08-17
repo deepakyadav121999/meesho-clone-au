@@ -114,10 +114,12 @@
       margin-top: 40px;
       width: 360px;
       justify-content: center;
+      align-items: center;
     }
   
     .homepage-list {
-
+      justify-content: center;
+      align-items: center;
       height: 250px;
       width: 140px;
     }

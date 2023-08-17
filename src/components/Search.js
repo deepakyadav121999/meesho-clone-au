@@ -30,7 +30,7 @@ function Search() {
   }
   const searchbar = useSelector(state=>state.search.search)
   let dta =  product.filter((item)=>{
-    return item.title.toLowerCase().includes(searchbar)
+    return item.title.toLowerCase().includes(searchbar)||item.category.toLowerCase().includes(searchbar)
    })
 
 

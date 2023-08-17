@@ -159,12 +159,13 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
     display: flex;
     flex-direction: column;
     position: absolute;
-    background-color: rgb(126, 121, 121);
+    background-color: rgb(255, 255, 255);
     font-size: 1.1rem;
     gap: 10px;
     padding: 20px;
     font-weight: 600;
     cursor: pointer;
+    border-radius: 5px;
   }
 
  

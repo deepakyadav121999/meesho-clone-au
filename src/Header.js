@@ -35,15 +35,15 @@ const headerInputChange=(e)=>{
           <p className='cros-btn' onClick={()=>sethide('non-hide')}>X</p>
           </div>
       
-          <Link to={'/womanEthinic'} style={{textDecoration:'none', color:'rgb(59, 58, 58)'}}><p>Women Ethnic</p></Link>
-      <Link to={'/itemunawailable'} style={{textDecoration:'none', color:'rgb(59, 58, 58)'}}><p>Women Western</p></Link>
-      <Link to={'/men'} style={{textDecoration:'none', color:'rgb(59, 58, 58)'}}> <p>Men</p></Link>
-      <Link to={'/itemunawailable'} style={{textDecoration:'none', color:'rgb(59, 58, 58)'}}><p>Kids</p></Link>
-      <Link to={'/itemunawailable'} style={{textDecoration:'none', color:'rgb(59, 58, 58)'}}><p>Home & Kitchen</p></Link>
-      <Link to={'/itemunawailable'} style={{textDecoration:'none', color:'rgb(59, 58, 58)'}}><p>Beauty & Health</p></Link>
-      <Link to={'/itemunawailable'} style={{textDecoration:'none', color:'rgb(59, 58, 58)'}}><p>Jwellery & Accessories</p></Link>
-      <Link to={'/itemunawailable'} style={{textDecoration:'none', color:'rgb(59, 58, 58)'}}><p>Bags & Footwear</p></Link>
-      <Link to={'/itemunawailable'} style={{textDecoration:'none', color:'rgb(59, 58, 58)'}}><p>Electronics</p></Link>
+          <Link to={'/womanEthinic'} style={{textDecoration:'none', color:'rgb(59, 58, 58)'}}><p className='bottom-container-p'>Women Ethnic</p></Link>
+      <Link to={'/itemunawailable'} style={{textDecoration:'none', color:'rgb(59, 58, 58)'}}><p className='bottom-container-p'>Women Western</p></Link>
+      <Link to={'/men'} style={{textDecoration:'none', color:'rgb(59, 58, 58)'}}> <p className='bottom-container-p'>Men</p></Link>
+      <Link to={'/itemunawailable'} style={{textDecoration:'none', color:'rgb(59, 58, 58)'}}><p className='bottom-container-p'>Kids</p></Link>
+      <Link to={'/itemunawailable'} style={{textDecoration:'none', color:'rgb(59, 58, 58)'}}><p className='bottom-container-p'>Home & Kitchen</p></Link>
+      <Link to={'/itemunawailable'} style={{textDecoration:'none', color:'rgb(59, 58, 58)'}}><p className='bottom-container-p'>Beauty & Health</p></Link>
+      <Link to={'/jwellery'} style={{textDecoration:'none', color:'rgb(59, 58, 58)'}}><p className='bottom-container-p'>Jwellery & Accessories</p></Link>
+      <Link to={'/bags'} style={{textDecoration:'none', color:'rgb(59, 58, 58)'}}><p className='bottom-container-p'>Bags & Footwear</p></Link>
+      <Link to={'/electronics'} style={{textDecoration:'none', color:'rgb(59, 58, 58)'}}><p className='bottom-container-p'>Electronics</p></Link>
         </div>
 
        <div className="left-header">

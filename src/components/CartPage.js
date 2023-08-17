@@ -31,9 +31,7 @@ function CartPage() {
   },[reloading])
   return (
 <>
-
-   <div className='cartpage-container'>
-   
+{ttl>0? <div className='cartpage-container'>
    <div className="container-left">
    { cart && cart.map((item,index)=>{return(
             <div className="left-container-item" key={index}>
@@ -93,9 +91,10 @@ function CartPage() {
        <p className='cart-right-smalltext'>Clicking on Continue will not deduct any money</p>
        <Link to={'/payment'}><button className='continue-btn'>Continue</button></Link>
    </div>
-</div>
-
-    </>
+  
+</div>:<h1>please add some products into cart</h1>}
+  
+</>
   )
 }
 
