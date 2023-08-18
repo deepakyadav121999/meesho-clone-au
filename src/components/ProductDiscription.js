@@ -10,7 +10,6 @@ import StarPurple500SharpIcon from '@mui/icons-material/StarPurple500Sharp';
 import { setLength } from '../redux/actions/LengthAction'
 import { Link } from 'react-router-dom'
 
-
 function ProductDiscription() {
   const[reloading ,setreloading] =useState(false)
     const temp = useParams()
@@ -19,6 +18,7 @@ function ProductDiscription() {
   
      let length =JSON.parse(localStorage.getItem('length'))
      const dispatch1 = useDispatch(ActionTypes.SET_LENGTH)
+
 
 useEffect(()=>{
 
@@ -60,7 +60,7 @@ useEffect(()=>{
                     ><ShoppingCartOutlinedIcon className='dis-btn' />Add to Cart</button>
           
                   
-          <Link to={'/womanEthinic'} ><button className='discription-btn2' ><KeyboardDoubleArrowRightIcon className='dis-btn'/>Buy Now</button></Link>
+          <Link to={'/directbuy'} ><button className='discription-btn2' ><KeyboardDoubleArrowRightIcon className='dis-btn'/>Buy Now</button></Link>
                     </div>
              </div>
              <div className="discription-container-right">

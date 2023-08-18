@@ -6,6 +6,7 @@ import { cartReducer } from "./cartReducer";
 import {totalReducer} from './totalReducer'
 import { lengthReducer } from "./lengthReducer";
 import { searchReducer } from "./searchReducer";
+
 const reducers = combineReducers({
     products :productReducer,
     discription:discprtionReducer,
@@ -13,6 +14,6 @@ const reducers = combineReducers({
     cart :cartReducer,
     total : totalReducer,
     length :lengthReducer,
-    search:searchReducer
+    search:searchReducer,
 })
 export  default reducers;
