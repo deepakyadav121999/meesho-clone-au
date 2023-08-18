@@ -20,7 +20,8 @@ sethide('hide')
 const dispatch = useDispatch(ActionTypes.SET_SEARCH)
 
 const headerInputChange=(e)=>{
-       dispatch(setSearch(e.target.value))
+       dispatch(setSearch(e.target.value.toLowerCase()))
+
 }
 
   return (
