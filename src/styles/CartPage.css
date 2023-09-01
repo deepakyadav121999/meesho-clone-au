@@ -161,3 +161,9 @@
       border-top: 0.1px solid rgb(204, 198, 198);
     }
   }
+  @media screen and (max-width: 768px){
+    .cartpage-container{
+      width: 470px;
+      background-color: whitesmoke;
+    }
+  }

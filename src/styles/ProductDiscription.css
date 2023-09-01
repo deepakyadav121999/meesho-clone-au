@@ -259,11 +259,13 @@ display: flex;
         width: 140px;
       }
     }
-  }@media screen and (max-width: 375px) {
+  }@media screen and (max-width: 500px) {
     .discription-container {
       display: flex;
       flex-direction: column;
       align-items: center;
+      background-color: whitesmoke;
+      width: 470px;
     }
   
     .discription-btn-11 {

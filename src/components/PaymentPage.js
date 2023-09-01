@@ -24,7 +24,8 @@ function PaymentPage() {
   const dispatch3 = useDispatch(ActionTypes.SET_PRODUCTS)
   const paymentBtn =()=>{
     
-
+    alert("Order has Been Palced redirecting you to main page"
+    )
           localStorage.setItem('total',JSON.stringify(0))
           localStorage.setItem('length',JSON.stringify(0))
           localStorage.setItem('products',JSON.stringify(0))
@@ -32,7 +33,8 @@ function PaymentPage() {
           dispatch2(setLength(lth))
           dispatch3(SetCart(crt))
           setreloding(true)
-          alert("Order has Been Palced")
+       
+        
   }
 
   

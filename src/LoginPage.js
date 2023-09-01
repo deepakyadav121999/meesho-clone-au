@@ -3,6 +3,8 @@ import './styles/Loginpage.css'
 import { Link } from 'react-router-dom'
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import {auth} from './firebase'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function LoginPage() {
   const[email,setemail] =useState('');
   const[password,setpassword] = useState('')
@@ -13,9 +15,12 @@ function LoginPage() {
       setpassword(e.target.value)
     }
     const signIn =()=>{
- signInWithEmailAndPassword(auth,email,password).then(()=>alert('login success')).catch(err=>alert(err))
+ signInWithEmailAndPassword(auth,email,password).then(()=>toast.success('login success',{
+  position:"top-center"
+ })).catch(err=>toast.warning((err),{position:"top-center"}))
     }
   return (
+    <>
     <div className='main-login-container'>
     <div className='loginpage-container'>
         <img src="https://images.meesho.com/images/marketing/1661417516766.webp" alt="" />
@@ -28,6 +33,9 @@ function LoginPage() {
  
       </div>
       </div>
+      <ToastContainer />
+
+      </>
   )
 }
 

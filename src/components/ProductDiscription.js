@@ -9,9 +9,13 @@ import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArro
 import StarPurple500SharpIcon from '@mui/icons-material/StarPurple500Sharp';
 import { setLength } from '../redux/actions/LengthAction'
 import { Link } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function ProductDiscription() {
   const[reloading ,setreloading] =useState(false)
+  const[addtocartbtn,setaddtocartbtn] =useState("Add to Cart")
+  const [btndisabled,setbtndisabled] =useState(false)
     const temp = useParams()
     const discription = useSelector((state)=>state.discription.discription)
      const dispatch = useDispatch(ActionTypes.SET_DISCRIPTION)
@@ -53,11 +57,19 @@ useEffect(()=>{
                        let oldtotal = JSON.parse(localStorage.getItem('total'))||0
                        localStorage.setItem('total',JSON.stringify(oldtotal+discription.price))
                        setreloading(!reloading)
-
+                       toast.success("Added to Cart!",{
+                        position:'top-center'
+                       });
+                   if(addtocartbtn==="Add to Cart"){
+                    setaddtocartbtn("Added to cart")
+                    
+                   }
+                   setbtndisabled(true)
                     }}
+                  
                     
                     
-                    ><ShoppingCartOutlinedIcon className='dis-btn' />Add to Cart</button>
+                    ><ShoppingCartOutlinedIcon className='dis-btn' disabled={btndisabled}/>{addtocartbtn}</button>
           
                   
           <Link to={'/directbuy'} ><button className='discription-btn2' ><KeyboardDoubleArrowRightIcon className='dis-btn'/>Buy Now</button></Link>
@@ -92,8 +104,9 @@ useEffect(()=>{
              </div>
         </div>
     }
+<ToastContainer />
     </>
   )
 }
 
-export default ProductDiscription
+export default ProductDiscription;

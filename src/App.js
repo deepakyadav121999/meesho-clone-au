@@ -39,7 +39,7 @@ function App() {
      }
     })
     // eslint-disable-next-line
-     },[])
+     },[user])
   return (
     <div className="App">
       <BrowserRouter>
