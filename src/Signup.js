@@ -3,6 +3,8 @@ import './styles/Signup.css';
 import { Link } from 'react-router-dom';
 import {createUserWithEmailAndPassword,updateProfile} from 'firebase/auth';
 import {auth} from './firebase'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Signup() {
   const[email,setemail] =useState('');
@@ -25,12 +27,12 @@ function Signup() {
        updateProfile(user,{
            displayName:name
        })
-      alert("Successfully Ragisterd")
+     toast.success("Successfully Ragisterd",{position:"top-center"})
       setemail('')
       setpassword('')
       setname('')
       console.log(res)
-    }).catch(res=>alert(res.message))
+    }).catch(res=>toast.error(res.message))
   }
   return (
     <>
@@ -47,7 +49,7 @@ function Signup() {
  
       </div>
       </div>
-    
+    <ToastContainer/>
     </>
     
   )

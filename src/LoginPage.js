@@ -17,7 +17,7 @@ function LoginPage() {
     const signIn =()=>{
  signInWithEmailAndPassword(auth,email,password).then(()=>toast.success('login success',{
   position:"top-center"
- })).catch(err=>toast.warning((err),{position:"top-center"}))
+ })).catch(()=>{toast.error("Invalid Username/Password",{position:"top-center"})})
     }
   return (
     <>

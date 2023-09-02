@@ -6,6 +6,7 @@ import { useDispatch,useSelector } from 'react-redux'
 import {setLength} from '../redux/actions/LengthAction'
 import {setTotal} from '../redux/actions/totalAction'
 import { Link } from 'react-router-dom'
+import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
 
 function CartPage() {
  const[reloading ,setreloading] =useState(false)
@@ -92,7 +93,10 @@ function CartPage() {
        <Link to={'/payment'}><button className='continue-btn'>Continue</button></Link>
    </div>
   
-</div>:<h1>please add some products into cart</h1>}
+</div>:<div className='emptybox-container'>
+  <p>please add some products into cart</p>
+  <ProductionQuantityLimitsIcon fontSize='large'/>
+  </div>}
   
 </>
   )
