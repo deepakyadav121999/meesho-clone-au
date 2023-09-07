@@ -7,6 +7,7 @@
     color: rgb(96, 96, 100);
     font-weight: 600;
     margin-top: 50px;
+    align-items: center;
 }
 .boxifoo{
   height: 300px;
@@ -70,5 +71,11 @@
   
     .icon {
       font-size: 25px;
+    }
+  }
+  @media screen and (max-width: 500){
+    .footer-container{
+      width: 470px;
+      align-items: center;
     }
   }

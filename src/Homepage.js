@@ -29,7 +29,25 @@ function Homepage() {
  }
   return (
   
-  
+  <div className="main-container">
+      <div className="sidebar">
+        <div className="sidebar-option">
+        <p>sort by price</p>
+        <input type="radio" value="sortbyprice" name='price'/>
+        </div>
+        
+        <div className="sidebar-option">
+        <p>High to Low</p>
+        <input type="radio" value="higtolow" name='price'/>
+        </div>
+
+        <div className="sidebar-option">
+        <p>Low to High</p>
+        <input type="radio" value="low to high" name='price'/>
+        </div>
+        
+       
+      </div>
     <div className='homepage-container'>
       
     { product && product.map((item,index)=>{
@@ -54,6 +72,7 @@ function Homepage() {
       </Link>
     }) }
     
+    </div>
     </div>
 
   )

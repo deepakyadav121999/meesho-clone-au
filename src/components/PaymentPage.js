@@ -7,12 +7,18 @@ import { setLength } from '../redux/actions/LengthAction';
 import { setTotal } from '../redux/actions/totalAction';
 import { ActionTypes } from '../redux/constants/action-types';
 import { SetCart } from '../redux/actions/cartAction';
+import { toast } from 'react-toastify';
 
 
 
 
 function PaymentPage() {
+  const[upi,setupi] =useState("upi-none")
+  const[debit,setdebit] = useState("debit-none")
+  const[upival,setupival] =useState("")
  const [reloding,setreloding] = useState(false)
+ const[debitNo,setdebitNo] = useState("")
+ const [cvv,setcvv] = useState("")
 
   const ttl = JSON.parse(localStorage.getItem('total'))
   const lth = JSON.parse(localStorage.getItem('length'))
@@ -37,33 +43,70 @@ function PaymentPage() {
         
   }
 
-  
+  const paymentMode =(e)=>{
+ if(e.target.value==="upi"){
+  setupi("upi-css")
+  setdebit("debit-none")
+ }
+else if(e.target.value==="atm"){
+  setdebit("debit-css")
+  setupi("upi-none")
+}
+
+  }
+  const verifyBtn =()=>{
+    if(upival){
+      toast.success("upi verified successfully" ,{position:"top-center"})
+    }
+    else{
+      toast.error("please enter valid upi", {position:"top-center"})
+    }
+  }
   return (
     <div className='main-payment-container'>
        <div className="left-payment-container">
           <p className='select-payment'>Select Payment Method</p>
           <p className='pay-in-cash'>PAY IN CASE</p>
           <div className="icon-down">
-          <p className='cash-on delivery'>Cash On Delivery</p>
+          <p className='cash-on delivery'>Payment Mode</p>
           <ExpandMoreIcon/>
           </div>
+          <div className="main-payment-radio" onChange={paymentMode}>
+
+    
        <div className="payment-radio">
        <p>Pay cash on delivery</p>
-         <input type="radio" />
+         <input type="radio" name='paymentMethod' value="cod"/>
        </div>
-      
-          <div className="reselling-container">
-            <div className="inside-reseller">
-            <p>Reselling the Order?</p>
-            <p>Click on Yes to add Final Price</p>
-            </div>
-            <div className="reseller-btn">
-              <button id='yes-btn'>Yes</button>
-              <button id='no-btn'>No</button>
-            </div>
-            
+       <div className="payment-radio">
+       <p>Pay Using Upi</p>
+         <input type="radio" name='paymentMethod' value="upi" />
+       </div>
+       <div className={upi}>
+          <input type="text" placeholder='enter your Upi Id' onChange={(e)=>setupival(e.target.value)}/>
+          <button onClick={verifyBtn}>Verify</button>
+         </div>
 
-          </div>
+       <div className="payment-radio">
+       <p>Pay Using Debit Card</p>
+         <input type="radio" name='paymentMethod' value="atm"/>
+       </div>
+       <div className={debit}>
+         <input type="text" placeholder='Debit Card Number'onChange={(e)=>setdebitNo(e.target.value)}/>
+         <input type="text" placeholder='enter cvv' onChange={(e)=>setcvv(e.target.value)}/>
+         <button onClick={()=>{
+           if(debitNo && cvv){
+            toast.success("Debit Card Verified Successfully" ,{position:"top-center"})
+           }
+           else{
+            toast.error("please enter valid details",{position:"top-center"})
+           }
+         }
+        
+        }>Submit</button>
+       </div>
+       </div>
+       
           
        </div>
 
@@ -72,19 +115,23 @@ function PaymentPage() {
         <p className='container-right-heading'>Price Details</p>
         <div className="total-product-price">
         <p>Total Product Price</p>
-        <p>{parseInt(total)}</p>
+        <p>{parseInt((total-(total/100)*10),10)}</p>
         </div>
   
        <div className="order-total">
        <p>Order Total</p>
-       <p>{parseInt(total)}</p>
+       <p>{parseInt((total-(total/100)*10),10)}</p>
      
        </div>
        <p className='cart-right-smalltext'>Clicking on Continue will not deduct any money</p>
 
-    <Link to={'/'}> <button onClick={paymentBtn}
+   {debitNo && cvv || upival ?<Link to={'/'}> <button onClick={paymentBtn}
     className='continue-btn'
-      >Continue</button></Link>
+      >Continue</button></Link>:<button onClick={()=>{
+        toast.error("please fill the details" ,{position:"top-center"})
+      }}
+      className='continue-btn'
+        >Continue</button>}
    </div>
 </div>
 

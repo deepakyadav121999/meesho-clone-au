@@ -23,6 +23,8 @@ import Bags from './components/Bags';
 import Electronics from './components/Electronics';
 import Search from './components/Search';
 import DirectBuyNow from './components/DirectBuyNow';
+import Address from './components/Address';
+import DirectAddress from './components/DirectAddress';
 
 function App() {
  const user =useSelector((state)=>state.user.user);
@@ -60,6 +62,8 @@ function App() {
         <Route path='/electronics' element={< Electronics/>}/>
         <Route path='/search' element={<Search/>}/>
         <Route path='/directbuy' element={<DirectBuyNow/>}/>
+        <Route path='/address' element={<Address/>}/>
+        <Route path='/directaddress' element={<DirectAddress/>}/>
 
   
 

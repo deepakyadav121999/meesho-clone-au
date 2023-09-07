@@ -72,7 +72,7 @@ useEffect(()=>{
                     ><ShoppingCartOutlinedIcon className='dis-btn' disabled={btndisabled}/>{addtocartbtn}</button>
           
                   
-          <Link to={'/directbuy'} ><button className='discription-btn2' ><KeyboardDoubleArrowRightIcon className='dis-btn'/>Buy Now</button></Link>
+          <Link to={'/directaddress'} ><button className='discription-btn2' ><KeyboardDoubleArrowRightIcon className='dis-btn'/>Buy Now</button></Link>
                     </div>
              </div>
              <div className="discription-container-right">

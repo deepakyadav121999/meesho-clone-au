@@ -87,6 +87,12 @@
     align-items: center;
     gap: 20px;
 }
+.upi-none{
+    display: none;
+}
+.debit-none{
+    display: none;
+}
 @media screen and (max-width: 768px) {
     .main-payment-container {
       flex-direction: column;
@@ -106,5 +112,40 @@
         padding-left: 10px;
     }
   }
+  .upi-css{
+    display: flex;
+    gap: 10px;
+  }
+.upi-css>input{
+    padding: 10px;
+    outline: none;
+    border-radius: 0.4rem;
+    border: 0.1px solid rgb(194, 190, 190);
+}
+.upi-css>button{
+    width: 60px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color:rgb(226, 29, 200);;
+}
+.debit-css{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.debit-css>input{
+    padding: 10px;
+    outline: none;
+    border-radius: 0.4rem;
+    border: 0.1px solid rgb(194, 190, 190);
+}
+.debit-css>button{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color:rgb(226, 29, 200);
 
+}
 

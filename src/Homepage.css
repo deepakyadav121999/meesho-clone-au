@@ -1,3 +1,23 @@
+.main-container{
+  display: flex;
+  justify-content: space-around;
+}
+.sidebar{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.sidebar-option{
+  padding: 10px;
+display: flex;
+gap: 2px;
+}
+.sidebar-option>p{
+  font-size: 0.9rem;
+  font-family: sans-serif;
+  font-weight: 600;
+}
 .homepage-list {
     height: 360px;
     width: 210px;
@@ -113,10 +133,12 @@
       align-items: center;
     }
   }
+ 
 
   
   @media screen and (max-width: 500px) {
-    .homepage-container {
+    
+    .main-container {
      
       margin-top: 40px;
       width: 470px;
@@ -150,5 +172,8 @@
       width: 40px;
       height: 18px;
       font-size: 14px;
+    }
+    .sidebar,.sidebar-option{
+      display: none;
     }
   }

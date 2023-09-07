@@ -14,11 +14,13 @@ import {auth} from './firebase'
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import LockOpenRoundedIcon from '@mui/icons-material/LockOpenRounded';
 function Header() {
  
  let lth = useSelector(state=>state.length.length)
 const [hid,sethide] = useState("non-hide")
 const [profilelogout,setProfilelogout] =useState("hidden-logout")
+const user =useSelector((state)=>state.user.user);
 const logoutMenu=()=>{
    if(profilelogout==='profile-logout'){
     setProfilelogout('hidden-logout')
@@ -74,11 +76,14 @@ const handleLogout = () => {
       <Link to={'/jwellery'} style={{textDecoration:'none', color:'rgb(59, 58, 58)'}}><p className='bottom-container-p'>Jwellery & Accessories</p></Link>
       <Link to={'/bags'} style={{textDecoration:'none', color:'rgb(59, 58, 58)'}}><p className='bottom-container-p'>Bags & Footwear</p></Link>
       <Link to={'/electronics'} style={{textDecoration:'none', color:'rgb(59, 58, 58)'}}><p className='bottom-container-p'>Electronics</p></Link>
-      <div className="logout-sidebar" onClick={handleLogout}>
+      {user ?<div className="logout-sidebar" onClick={handleLogout}>
         <p>Logout</p>
         <LogoutIcon/>
-
-      </div>
+      </div>:
+      <div className="logout-sidebar">
+        <p>Login</p>
+        <LockOpenRoundedIcon/>
+      </div>}
         </div>
 
        <div className="left-header">
@@ -99,10 +104,16 @@ const handleLogout = () => {
         </div>
         <div className={profilelogout}>
           <p>Welcome to Meesho</p>
+         
+         {user?
           <div className="logo-logout" onClick={handleLogout}>
           <p>Logout</p>
           <LogoutIcon/>
+          </div>:<div className="logo-logout">
+           <p>Login</p>
+           <LockOpenRoundedIcon/>
           </div>
+         }
         
         </div>
         <Link to={'/cartpage'} style={{textDecoration:'none', color:'rgb(59, 58, 58)'}}>

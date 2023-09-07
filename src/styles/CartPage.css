@@ -52,9 +52,29 @@
     font-size: 20px;
  }  
  .left-container-qty{
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
     font-weight: 500;
     color: rgb(65, 62, 62);
     font-size: 17px;
+ }
+ .edit-qty{
+  display: flex;
+  gap: 20px;
+  text-align: center;
+ }
+ .edit-qty>p{
+  text-align: center;
+  border: 0.1px solid rgb(163, 157, 157);
+  width: 2rem;
+  border-radius: 5px;
+  color: rgb(219, 39, 219);
+  font-family: 800;
+  font-size: 2rem;
+  padding: 5px;
+  cursor: pointer;
+  height: 2rem;
  }
  .left-container-edit-btn{
     color: rgb(238, 37, 188);
@@ -167,8 +187,18 @@
       background-color: whitesmoke;
     }
   }
+
   .emptybox-container{
     text-align: center;
     font-size: 2rem;
     color: rgb(74, 77, 80);
+  }
+  .quantity-border{
+    border: 0.1px solid red;
+    width: 5rem;
+    text-align: center;
+    padding: 1rem;
+  }
+  .display-none{
+    display: none;
   }

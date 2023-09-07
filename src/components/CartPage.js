@@ -15,8 +15,13 @@ function CartPage() {
   let length =JSON.parse(localStorage.getItem('length'))
   const dispatch1 = useDispatch(ActionTypes.SET_LENGTH)
   let total =JSON.parse(localStorage.getItem('total'))
-  const dispatch2 = useDispatch(ActionTypes.SET_LENGTH)
+
+  const dispatch2 = useDispatch(ActionTypes.SET_TOTAL)
   const ttl = useSelector(state=>state.total.total)
+  const [editclass,seteditclass] = useState("kuch-nahi");
+  const[qtyBtn,setqtyBtn] =useState("display-none")
+ const[itemquantity,setItemQuantity] = useState(1)
+
 
   useEffect(()=>{
     let b=  JSON.parse(localStorage.getItem('products'))
@@ -30,6 +35,25 @@ function CartPage() {
     }
      //eslint-disable-next-line
   },[reloading])
+
+ 
+
+
+  const editBtn =()=>{
+    if(editclass==="kuch-nahi")
+    seteditclass("quantity-border")
+    
+  else
+  seteditclass("kuch-nahi")
+  
+
+ if(qtyBtn ==="display-none")
+    setqtyBtn("abc")
+  
+  else
+setqtyBtn("display-none")
+  
+  }
   return (
 <>
 {ttl>0? <div className='cartpage-container'>
@@ -42,13 +66,39 @@ function CartPage() {
               <div className="left-image-text-adjust1">
                 <div className='name-edit-btn'>
                 <p>{item.title}</p>
-                <p className='left-container-edit-btn'>Edit</p>
+                <p className='left-container-edit-btn' onClick={editBtn}>Edit</p>
                 </div>
                  
                  <p> ₹{item.price}</p>
                  <p>All issue easy returns allowed</p>
                 <div className="left-container-qty">
-                  <p>Qty:1</p>
+                  <p className={editclass}>Qty:{itemquantity}</p>
+                  <div className={`edit-qty ${qtyBtn}`}>
+                  <p onClick={()=>{
+                      if(ttl>item.price){
+                        dispatch2(setTotal(ttl-parseInt(item.price,10)))
+                        setItemQuantity(itemquantity-1)
+                           }
+                
+                    else{
+                      setItemQuantity(1)
+                 let x= cart
+                 x.splice(index,1)
+                 localStorage.setItem('products',JSON.stringify(x))
+                 setreloading(!reloading)
+                 let oldlength = JSON.parse(localStorage.getItem('length'))||0
+                 localStorage.setItem('length',JSON.stringify(oldlength-1))
+                 let oldtotal = JSON.parse(localStorage.getItem('total'))||0
+                 localStorage.setItem('total',JSON.stringify(oldtotal-item.price))
+                  }
+               
+                  }} className={qtyBtn}>-</p>
+                    <p onClick={()=>{
+                  dispatch2(setTotal(ttl+parseInt(item.price,10)))
+                  setItemQuantity(itemquantity+1)
+                    }}  className={qtyBtn}>+</p>
+                    
+                  </div>
                   <p></p>
                 </div>
                 <button onClick={()=>{
@@ -90,7 +140,7 @@ function CartPage() {
       
 
        <p className='cart-right-smalltext'>Clicking on Continue will not deduct any money</p>
-       <Link to={'/payment'}><button className='continue-btn'>Continue</button></Link>
+       <Link to={'/address'}><button className='continue-btn'>Continue</button></Link>
    </div>
   
 </div>:<div className='emptybox-container'>
