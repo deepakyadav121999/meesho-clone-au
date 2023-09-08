@@ -30,7 +30,7 @@ function Homepage() {
   return (
   
   <div className="main-container">
-      <div className="sidebar">
+      {/* <div className="sidebar">
         <div className="sidebar-option">
         <p>sort by price</p>
         <input type="radio" value="sortbyprice" name='price'/>
@@ -47,7 +47,7 @@ function Homepage() {
         </div>
         
        
-      </div>
+      </div> */}
     <div className='homepage-container'>
       
     { product && product.map((item,index)=>{

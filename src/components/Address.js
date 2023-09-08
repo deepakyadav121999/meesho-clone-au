@@ -9,25 +9,47 @@ import 'react-toastify/dist/ReactToastify.css';
 const Address = () => {
 const[popUp,setpopUp] = useState("hide-box")
 const[addaddress,setaddaddress] = useState("inside-box")
+const[name,setname] = useState("")
+const[contact,setcontact] = useState("")
+const[ houseNumber,sethouseNumber] = useState("")
+const[roadName,setroadName] = useState("")
+const[pincode,setpincode] = useState("")
+const[city,setcity] = useState("")
+const[nearbyPlace,setnearbyPlace] = useState("")
 
-  const[userdetails,setuserdetails]= useState({
-    name:'',
-  contact:'',
-  houseNumber:'',
-  roadName:'',
-  pincode:'',
-  city:'',
-  nearbyPlace:''
-  })
-const handleChange=(e)=>{
-  const name = e.target.name
- setuserdetails({
-  ...userdetails,[name]:e.target.value
- })
- 
+  
+const handleChange1=(e)=>{
+ if(name.length<20){
+  setname(e.target.value)
+ }
+}
+const handleChange2=(e)=>{
+  if(contact.length<10){
+    setcontact(e.target.value)
+   }
+   else{
+    setcontact(" ")
+   }
+}
+const handleChange3=(e)=>{
+ if(houseNumber.length<15){
+  sethouseNumber(e.target.value)
+ }
+}
+const handleChange4=(e)=>{
+
+}
+const handleChange5=(e)=>{
+
+}
+const handleChange6=(e)=>{
+
+}
+const handleChange7=(e)=>{
+
 }
 const addConfirm =()=>{
-  if(userdetails.name && userdetails.contact && userdetails.houseNumber && userdetails.roadName && userdetails.pincode && userdetails.city){
+  if(name && contact &&houseNumber && roadName && pincode && city){
     setpopUp("hidden")
     setaddaddress("hide-box1")
   }
@@ -46,19 +68,19 @@ const closeBtn =()=>{
     <div className='address-contaier'>
     <div className={popUp}>
       <p className='close-btn' onClick={closeBtn}>Edit</p>
-      <p>{userdetails.name}</p>
+      <p>{name}</p>
       <div className="add">
-      <p>{userdetails.houseNumber},</p>
-     <p>{userdetails.roadName}</p>
+      <p>{houseNumber},</p>
+     <p>{roadName}</p>
       </div>
       <div className="add">
-      <p>{userdetails.city}, </p>
-     <p>{userdetails.pincode}</p>
+      <p>{city}, </p>
+     <p>{pincode}</p>
       </div>
     
     
-     <p>{userdetails.nearbyPlace}</p>
-     <p>{userdetails.contact}</p>
+     <p>{nearbyPlace}</p>
+     <p>{contact}</p>
      <Link to={'/payment'}><button className='continue-btn'>Deliver to this Address</button></Link>
 
     </div>
@@ -73,18 +95,18 @@ const closeBtn =()=>{
        <p>Contact Details</p>
        </div>
        
-       <input type="text" placeholder='Name' name='name' onChange={handleChange}/>
-       <input type="text" placeholder='Contact Number' name='contact'onChange={handleChange}/>
+       <input type="text" placeholder='Name'  onChange={handleChange1} value={name}/>
+       <input type="number" placeholder='Contact Number' onChange={handleChange2} value={contact}/>
        <div className="location">
        <LocationOnOutlinedIcon/>
        <p>Address</p>
        </div>
       
-       <input type="text" placeholder='House no./Building Name' name='houseNumber' onChange={handleChange}/>
-       <input type="text" placeholder='Road Name/Area/Colony'name='roadName' onChange={handleChange}/>
-       <input type="text" placeholder='Pincode' name='pincode' onChange={handleChange}/>
-       <input type="text" placeholder='City'name='city' onChange={handleChange}/>
-       <input type="text" placeholder='Nearby Famous Place/Shop/School,etc.(optional)' name="nearbyPlace" onChange={handleChange}/>
+       <input type="text" placeholder='House no./Building Name'  onChange={handleChange3} value={houseNumber}/>
+       <input type="text" placeholder='Road Name/Area/Colony' onChange={handleChange4} value={roadName}/>
+       <input type="text" placeholder='Pincode'  onChange={handleChange5} value={pincode}/>
+       <input type="text" placeholder='City' onChange={handleChange6} value={city}/>
+       <input type="text" placeholder='Nearby Famous Place/Shop/School,etc.(optional)'  onChange={handleChange7} value={nearbyPlace}/>
        <button className='continue-btn' onClick={addConfirm}>Save Address & Continue</button>
        </div>
     </div>

@@ -2,22 +2,22 @@
   display: flex;
   justify-content: space-around;
 }
-.sidebar{
+/* .sidebar{
   width: 30%;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-}
-.sidebar-option{
+} */
+/* .sidebar-option{
   padding: 10px;
 display: flex;
 gap: 2px;
-}
-.sidebar-option>p{
+} */
+/* .sidebar-option>p{
   font-size: 0.9rem;
   font-family: sans-serif;
   font-weight: 600;
-}
+} */
 .homepage-list {
     height: 360px;
     width: 210px;
