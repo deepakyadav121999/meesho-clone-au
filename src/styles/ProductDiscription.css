@@ -265,7 +265,8 @@ display: flex;
       flex-direction: column;
       align-items: center;
       background-color: whitesmoke;
-      width: 470px;
+      width: 480px;
+      padding: 10px;
     }
   
     .discription-btn-11 {

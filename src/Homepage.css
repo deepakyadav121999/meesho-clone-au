@@ -141,9 +141,10 @@ gap: 2px;
     .main-container {
      
       margin-top: 40px;
-      width: 470px;
+      width: 500px;
       justify-content: center;
       align-items: center;
+      padding: 10px;
     }
   
     .homepage-list {

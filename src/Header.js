@@ -15,8 +15,11 @@ import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LockOpenRoundedIcon from '@mui/icons-material/LockOpenRounded';
+
+
 function Header() {
  
+  
  let lth = useSelector(state=>state.length.length)
 const [hid,sethide] = useState("non-hide")
 const [profilelogout,setProfilelogout] =useState("hidden-logout")
@@ -41,6 +44,7 @@ const headerInputChange=(e)=>{
 }
 
 
+
 const navigate = useNavigate();
  
 const handleLogout = () => {               
@@ -54,6 +58,9 @@ const handleLogout = () => {
     setProfilelogout("hidden-logout")
     sethide("non-hide")
 }
+
+
+
 
   return (
     <>

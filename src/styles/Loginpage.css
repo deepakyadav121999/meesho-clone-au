@@ -51,3 +51,10 @@
     display: flex;
     justify-content: center;
 }
+@media screen and (max-width: 500px){
+    .loginpage-container{
+        width: 470px;
+        padding: 20px;
+    margin-left:210px;
+    }
+}

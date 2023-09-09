@@ -69,6 +69,7 @@
 @media screen and (max-width: 500px){
     .address-contaier{
         background-color: whitesmoke;
-        width: 470px;
+        width: 480px;
+        padding: 10px;
     }
 }

@@ -22,6 +22,10 @@ const handleChange1=(e)=>{
  if(name.length<20){
   setname(e.target.value)
  }
+ else{
+ setname(" ")
+  toast.error("Name should be short",{position:"top-center"})
+ }
 }
 const handleChange2=(e)=>{
   if(contact.length<10){
@@ -29,24 +33,55 @@ const handleChange2=(e)=>{
    }
    else{
     setcontact(" ")
+    toast.error("Mobile number should be under 10 digit",{position:"top-center"})
    }
 }
 const handleChange3=(e)=>{
  if(houseNumber.length<15){
   sethouseNumber(e.target.value)
  }
+ else{
+  sethouseNumber(" ")
+  toast.error("enter valid house number",{position:"top-center"})
+ }
 }
 const handleChange4=(e)=>{
+  if(roadName.length<20){
+    setroadName(e.target.value)
+  }
+  else{
+    setroadName(" ")
+    toast.error("enter road name under 20 character",{position:"top-center"})
+  }
 
 }
 const handleChange5=(e)=>{
+  if(pincode.length<12){
+    setpincode(e.target.value)
+  }
+  else{
+    setpincode(" ")
+    toast.error("enter correct pincode pincode should be under 6 digits",{position:"top-center"})
+  }
 
 }
 const handleChange6=(e)=>{
-
+if(city.length<10){
+  setcity(e.target.value)
+}
+else{
+  setcity(" ")
+  toast.error("enter valid city name ",{position:"top-center"})
+}
 }
 const handleChange7=(e)=>{
-
+  if(nearbyPlace.length<50){
+    setnearbyPlace(e.target.value)
+  }
+else{
+  setnearbyPlace(" ")
+  toast.error("nearby places shold be under 50 character",{position:"top-center"})
+}
 }
 const addConfirm =()=>{
   if(name && contact &&houseNumber && roadName && pincode && city){
@@ -104,7 +139,7 @@ const closeBtn =()=>{
       
        <input type="text" placeholder='House no./Building Name'  onChange={handleChange3} value={houseNumber}/>
        <input type="text" placeholder='Road Name/Area/Colony' onChange={handleChange4} value={roadName}/>
-       <input type="text" placeholder='Pincode'  onChange={handleChange5} value={pincode}/>
+       <input type="number" placeholder='Pincode'  onChange={handleChange5} value={pincode}/>
        <input type="text" placeholder='City' onChange={handleChange6} value={city}/>
        <input type="text" placeholder='Nearby Famous Place/Shop/School,etc.(optional)'  onChange={handleChange7} value={nearbyPlace}/>
        <button className='continue-btn' onClick={addConfirm}>Save Address & Continue</button>
