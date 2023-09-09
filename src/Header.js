@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './styles/Header.css'
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
@@ -25,12 +25,8 @@ const [hid,sethide] = useState("non-hide")
 const [profilelogout,setProfilelogout] =useState("hidden-logout")
 const user =useSelector((state)=>state.user.user);
 const logoutMenu=()=>{
-   if(profilelogout==='profile-logout'){
-    setProfilelogout('hidden-logout')
-   }
-   else{
-    setProfilelogout("profile-logout")
-   }
+    setProfilelogout('profile-logout')
+  
 }
 const classChange=()=>{
 sethide('hide')
@@ -58,7 +54,12 @@ const handleLogout = () => {
     setProfilelogout("hidden-logout")
     sethide("non-hide")
 }
-
+useEffect(()=>{
+  let handle =()=>{
+    setProfilelogout("hidden-logout")
+  }
+  document.addEventListener("mousedown",handle)
+})
 
 
 

@@ -52,14 +52,18 @@ else if(e.target.value==="atm"){
   setdebit("debit-css")
   setupi("upi-none")
 }
+else if(e.target.value==="cod"){
+    setdebit("debit-none")
+    setupi("upi-none")
+}
 
   }
   const verifyBtn =()=>{
-    if(upival){
+    if(upival.length<20 && upival.length>10){
       toast.success("upi verified successfully" ,{position:"top-center"})
     }
     else{
-      toast.error("please enter valid upi", {position:"top-center"})
+      toast.error("please enter valid upi ,upi id should be in 10 to 20 digit/char", {position:"top-center"})
     }
   }
   return (
@@ -95,11 +99,11 @@ else if(e.target.value==="atm"){
          <input type="text" placeholder='Debit Card Number'onChange={(e)=>setdebitNo(e.target.value)}/>
          <input type="text" placeholder='enter cvv' onChange={(e)=>setcvv(e.target.value)}/>
          <button onClick={()=>{
-           if(debitNo && cvv){
+           if(debitNo.length===16 && cvv.length===3){
             toast.success("Debit Card Verified Successfully" ,{position:"top-center"})
            }
            else{
-            toast.error("please enter valid details",{position:"top-center"})
+            toast.error("please enter valid debit card number should be in 16 digit and cvv should be in 3 digit",{position:"top-center"})
            }
          }
         

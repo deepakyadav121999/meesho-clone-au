@@ -183,7 +183,7 @@
   }
   @media screen and (max-width: 500px){
     .cartpage-container{
-      width: 480px;
+      width: 460px;
       background-color: whitesmoke;
       padding: 10px;
     }
