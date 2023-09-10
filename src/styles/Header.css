@@ -28,6 +28,9 @@
   flex-grow: 1; 
   padding: 10px 20px; 
 }
+.meesho-main-logo>img{
+  width: 9rem;
+}
 
 .right-header {
   display: flex;
