@@ -15,6 +15,7 @@ import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LockOpenRoundedIcon from '@mui/icons-material/LockOpenRounded';
+import logo from './logo.png';
 
 
 function Header() {
@@ -96,7 +97,7 @@ useEffect(()=>{
 
        <div className="left-header">
         <div>
-        <Link to={'/'} style={{textDecoration:'none', color:'rgb(59, 58, 58)'}}><p className='meesho-main-logo'>meesho</p></Link></div>
+        <Link to={'/'} style={{textDecoration:'none', color:'rgb(59, 58, 58)'}}><p className='meesho-main-logo'><img src={logo} alt="" /></p></Link></div>
         
         <div className="ip-section">
           <SearchIcon />
