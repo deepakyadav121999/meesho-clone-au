@@ -33,7 +33,7 @@ function Signup() {
       setpassword('')
       setdname('')
       console.log(res)
-    }).catch(res=>toast.error(res.message))
+    }).catch(res=>toast.error(res.message,{position:"top-center"}))
   }
   return (
     <>
