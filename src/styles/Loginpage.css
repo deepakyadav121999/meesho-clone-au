@@ -53,7 +53,7 @@
 }
 @media screen and (max-width: 500px){
     .loginpage-container{
-        width: 470px;
+        width: 480px;
         padding: 20px;
     margin-left:308px;
     }

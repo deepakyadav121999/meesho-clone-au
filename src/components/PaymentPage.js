@@ -28,6 +28,9 @@ function PaymentPage() {
   const dispatch1 = useDispatch(ActionTypes.SET_TOTAL)
   const dispatch2 = useDispatch(ActionTypes.SET_LENGTH)
   const dispatch3 = useDispatch(ActionTypes.SET_PRODUCTS)
+
+
+  const[cod,setcod] = useState(false)
   const paymentBtn =()=>{
     
     alert("Order has Been Palced redirecting you to main page"
@@ -47,12 +50,15 @@ function PaymentPage() {
  if(e.target.value==="upi"){
   setupi("upi-css")
   setdebit("debit-none")
+  setcod(false)
  }
 else if(e.target.value==="atm"){
   setdebit("debit-css")
   setupi("upi-none")
+  setcod(false)
 }
 else if(e.target.value==="cod"){
+  setcod(true)
     setdebit("debit-none")
     setupi("upi-none")
 }
@@ -129,7 +135,7 @@ else if(e.target.value==="cod"){
        </div>
        <p className='cart-right-smalltext'>Clicking on Continue will not deduct any money</p>
 
-   {debitNo && cvv || upival ?<Link to={'/'}> <button onClick={paymentBtn}
+   {debitNo && cvv || upival ||cod ?<Link to={'/'}> <button onClick={paymentBtn}
     className='continue-btn'
       >Continue</button></Link>:<button onClick={()=>{
         toast.error("please fill the details" ,{position:"top-center"})

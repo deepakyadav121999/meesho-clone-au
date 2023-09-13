@@ -6,6 +6,7 @@ import { ActionTypes } from './redux/constants/action-types'
 import { Link } from 'react-router-dom'
 import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
 import {setDiscription} from './redux/actions/discriptionAction'
+import BannerComponent from './components/Banner/BannerComponent';
 
 function Homepage() {
      const dispatch1 = useDispatch(ActionTypes.SET_DISCRIPTION)
@@ -28,6 +29,10 @@ function Homepage() {
   dispatch1(setDiscription(''))
  }
   return (
+  <>
+  <div className="banners">
+  <BannerComponent/>
+  </div>
   
   <div className="main-container">
       {/* <div className="sidebar">
@@ -74,7 +79,7 @@ function Homepage() {
     
     </div>
     </div>
-
+    </>
   )
 }
 

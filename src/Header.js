@@ -26,8 +26,10 @@ const [hid,sethide] = useState("non-hide")
 const [profilelogout,setProfilelogout] =useState("hidden-logout")
 const user =useSelector((state)=>state.user.user);
 const logoutMenu=()=>{
+  if(profilelogout==="hidden-logout")
     setProfilelogout('profile-logout')
-  
+  else
+  setProfilelogout('profile-logout')
 }
 const classChange=()=>{
 sethide('hide')
@@ -54,14 +56,17 @@ const handleLogout = () => {
     });
     setProfilelogout("hidden-logout")
     sethide("non-hide")
+
 }
 useEffect(()=>{
   let handle =()=>{
     setProfilelogout("hidden-logout")
   }
-  document.addEventListener("mousedown",handle)
-})
+  document.addEventListener("mouseup",handle)
+},[])
+ 
 
+let dname =(localStorage.getItem('dname')||"")
 
 
   return (
@@ -112,7 +117,7 @@ useEffect(()=>{
         <p >Profile</p>
         </div>
         <div className={profilelogout}>
-          <p>Welcome to Meesho</p>
+          <p>{user?<p>Welcome:{dname}</p>:<p></p>}</p>
          
          {user?
           <div className="logo-logout" onClick={handleLogout}>

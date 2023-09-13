@@ -56,7 +56,7 @@ const handleChange4=(e)=>{
 
 }
 const handleChange5=(e)=>{
-  if(pincode.length<12){
+  if(pincode.length<6){
     setpincode(e.target.value)
   }
   else{

@@ -7,9 +7,10 @@
     color: rgb(96, 96, 100);
     font-weight: 600;
     margin-top: 50px;
- min-width: 470px;
+ min-width: 480px;
  padding: 10px;
  background-color: whitesmoke;
+ padding: 20px;
 }
 .boxifoo{
   height: 300px;

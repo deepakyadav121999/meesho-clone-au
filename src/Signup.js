@@ -21,7 +21,9 @@ function Signup() {
     setdname(e.target.value)
   }
 
+
   const signupbtn =()=>{
+    localStorage.setItem('dname',JSON.stringify(dname))
     createUserWithEmailAndPassword(auth,email,password).then((res)=>{
        const user = res.user;
        updateProfile(user,{
@@ -34,6 +36,7 @@ function Signup() {
       setdname('')
       console.log(res)
     }).catch(res=>toast.error(res.message,{position:"top-center"}))
+
   }
   return (
     <>
