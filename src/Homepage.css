@@ -162,8 +162,9 @@ gap: 2px;
     .homepage-list {
       justify-content: center;
       align-items: center;
-      height: 250px;
+      height: 260px;
       width: 180px;
+      padding: 20px;
     }
   
     .homepage-list > img {
