@@ -6,9 +6,10 @@ import { Link } from 'react-router-dom'
 const BannerComponent = () => {
   return (
     <div className='bannercomponent'>
-      <div className="banner1">
+      <Link to={"https://play.google.com/store/apps/details?id=com.meesho.supply"}><div className="banner1">
       <img src={banner1} alt="" />
       </div>
+      </Link>
 
 
 
